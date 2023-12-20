@@ -8,14 +8,18 @@
 #slider-wrapper {
     height: 500px;
     width: 700px;
-    display: flex;
+    overflow: hidden;
+    position: relative;
 }
 
 #slider {    
     height: 500px;    
     width: 700px;    
-    display: flex;    
-    overflow: hidden;
+    display: flex;
+    position: absolute;    
+    top: 0;
+    left: 0;
+    /* overflow: hidden; */
 }
 
 #slider a {    

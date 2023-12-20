@@ -31,6 +31,8 @@
             ?>
         </div>
     </div>
+    <button id="left">&larr;</button>
+    <button id="right">&rarr;</button>
     
 </body>
 </html>
