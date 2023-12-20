@@ -2,33 +2,151 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    
 }
-
-#slider-wrapper {
-    height: 500px;
-    width: 700px;
-    overflow: hidden;
-    position: relative;
-}
-
-#slider {    
-    height: 500px;    
-    width: 700px;    
+/* header */
+header {
+    width: 1200px;
+    height: 75px;
+    border-bottom: 2px solid #cecece;
     display: flex;
-    position: absolute;    
-    top: 0;
-    left: 0;
-    /* overflow: hidden; */
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
 }
 
-#slider a {    
-    height: 100%;    
-    flex: 0 0 700px;
+.create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
 }
 
-#slider a img {    
-    height: 100%;    
-    width: 100%;    
-    object-fit: cover;
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
+
+header nav a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    bottom: 0px;
+    transition: bottom .25s ease;
+}
+
+header nav a:hover {
+    bottom: 5px;
+}
+
+/* slider */
+
+.slider-body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#slider {
+    margin: 30px auto;
+    overflow: hidden;
+    width: 656px;
+    height: 556px;
+    border: none;
+    
+
+}
+
+#slider img {
+    width: 656px;
+    height: 556px;
+    object-fit: contain;
+}
+
+
+
+.slider-line {
+    display: flex;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+#left {
+    position: absolute;
+    left: 100px;
+    border: none;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+#right {
+    position: absolute;
+    right: 100px;
+    border: none;
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* cms.php */
+
+main {
+    display: flex;
+    align-items: first baseline;
+    justify-content: space-between;
+    width: 900px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.product-create,
+.slider-product-create {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.product-create input,
+.product-create button,
+.slider-product-create input,
+.slider-product-create button,
+.slider-product-create select {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 0; 
+    outline: 0;
+    background-color: #ececec;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+/* product.php */
+
+.catalog {
+    height: 120px;
+    margin: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+ img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 1px solid #cecece;
+    
+}
+
+
+
