@@ -1,9 +1,12 @@
-<!-- afisarea produsului pe care facem click din slider -->
+<!-- info despre produsul pe care am dat click din slider/index.php -->
 <?php
-    require_once ("./config.php");
+    $id = $_GET["id"];
+    echo $id;
 
-    $sql = "SELECT * FROM products";
-    $result = $conn -> query($sql);
+    require_once "./config.php";
+
+    $sql = "SELECT * FROM products WHERE product_id = $id";
+
 ?>
 
 <!DOCTYPE html>
@@ -23,23 +26,25 @@
         <h1>web</h1>
         <nav>
             <a href="index.php">Products</a>
-            <a href="index.php">Home</a>
+            <a href="cms.php">Home</a>
         </nav>
     </header> 
     <main>
-        <div class="catalog">
+        
             <?php
-                if ($result -> num_rows > 0) {
-                    while ($row = $result -> fetch_assoc()) {
-                        echo "<div class='listing'>
+                if ($result = $conn->query($sql)) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='container'>
                             <img src=$row[url]>
-                            <h2>$row[title]</h1>
-                            <p>$row[price]</p>    
+                            <div>
+                                <h2>$row[title]</h1>
+                                <p>$row[price] MDL</p>  
+                            </div>  
                         </div>";
                     }
                 }
             ?>
-        </div>
+        
     </main>
 </body>
 </html>
